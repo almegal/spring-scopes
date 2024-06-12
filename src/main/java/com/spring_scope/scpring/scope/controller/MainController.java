@@ -25,7 +25,9 @@ public class MainController {
         if (Logout != null) {
             loggedUserManegmentService.setUserName(null);
         }
+        // получуем в текущий сессии состояние поля username
         String userName = loggedUserManegmentService.getUserName();
+        // если равен нулю то делаем редирект
         if (userName == null) {
             return "redirect:/";
         }
