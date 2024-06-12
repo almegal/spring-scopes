@@ -57,6 +57,8 @@
     <h1>Welcome, <span th:text="${username}">User</span>!</h1>
     <p>You have successfully logged in.</p>
     <a href="/main?Logout">Logout</a>
+    <h3> Всего людей пытались залогиниться: <span th:text="${loginCount}"></span>
+    </h3>
 </div>
 </body>
 </html>
