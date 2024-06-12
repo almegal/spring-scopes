@@ -5,4 +5,3 @@
 В проекте используется зависимости:
 - spring/sptring-boot
 - thymeleaf
-- 
