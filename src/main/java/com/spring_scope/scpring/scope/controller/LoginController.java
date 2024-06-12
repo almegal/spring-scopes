@@ -32,8 +32,6 @@ public class LoginController {
         boolean logIn = loginProcessor.login();
         // если да
         if (logIn) {
-            // устанавливаем в представление атриббуте
-            model.addAttribute("username", username);
             // перенаправляем на основную страницу
             return "redirect:/main";
         }
