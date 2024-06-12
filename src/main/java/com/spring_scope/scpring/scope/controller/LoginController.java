@@ -25,14 +25,21 @@ public class LoginController {
             @RequestParam String username,
             @RequestParam String password,
             Model model) {
+        // устанваливаем данные пользователя в соответствующие поля
         loginProcessor.setUsername(username);
         loginProcessor.setPassword(password);
+        // проверяем проходят ли данные для успешной аутентификации
         boolean logIn = loginProcessor.login();
+        // если да
         if (logIn) {
-            model.addAttribute("message", "Ты залогинен!");
-        } else {
-            model.addAttribute("message", "Ты не прошел аутентификацию");
+            // устанавливаем в представление атриббуте
+            model.addAttribute("username", username);
+            // перенаправляем на основную страницу
+            return "redirect:/main";
         }
+        // если дошли сюда, устанавливаем значение представление message
+        model.addAttribute("message", "Ты не прошел аутентификацию");
+        // и возращаем обратно на страницу
         return "login.html";
     }
 }
